@@ -13,6 +13,11 @@ import java.util.ArrayList;
 public class Archivos_Plantas {
     private File F = new File("./Archivo/Informacion.txt");
     
+    public ArrayList Ingresar( ArrayList Plantas, Planta planta){
+        Plantas.add(planta);
+        return Plantas;
+    } 
+    
     public ArrayList<Planta> Recuperar_Info() {
         byte i = 0;
         String S="";
