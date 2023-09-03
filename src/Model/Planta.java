@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
-/**
- *
- * @author 57301
- */
 public class Planta {
     //Atributos
     private int codigo;
@@ -15,9 +8,9 @@ public class Planta {
     private String cuidados;
     //tolerante a sol o sombra
     private String tolerancia;
-    private float precio;
+    private int precio;
 
-    public Planta(byte codigo, String nombre, String cuidados, String tolerancia, float precio) {
+    public Planta(byte codigo, String nombre, String cuidados, String tolerancia, int precio) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cuidados = cuidados;
@@ -65,11 +58,11 @@ public class Planta {
         this.tolerancia = tolerancia;
     }
 
-    public float getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
     

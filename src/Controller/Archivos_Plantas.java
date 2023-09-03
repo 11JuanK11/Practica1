@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Controller;
 
 import java.io.BufferedReader;
@@ -11,11 +8,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
 import Model.*;
-/**
- *
- * @author 57301
- */
-public class Archivos_Planos {
+import java.util.ArrayList;
+
+public class Archivos_Plantas {
     public void EscribirArchivo(File F) {
 		int regis, edad, sueldo;
 		String Nombre;
@@ -160,4 +155,29 @@ public class Archivos_Planos {
 			leer.close();
 		} catch (Exception e) {}
 	}
+        
+            
+    public int CantidadSombras (ArrayList<Planta> Plantas){
+        int CantSom = 0;
+        
+        for (int i = 0; i < Plantas.size(); i++) {
+            if(Plantas.get(i).getTolerancia().equalsIgnoreCase("Sombra")){
+                CantSom++;
+            }
+        }
+        return CantSom;
+    }
+    
+    public String PlantasSolares(ArrayList<Planta> Plantas){
+        String S = "";
+        
+        for (int i = 0; i < Plantas.size(); i++) {
+            if(Plantas.get(i).getTolerancia().equalsIgnoreCase("Solar")){
+                S += "Nombre: " + Plantas.get(i).getTolerancia() + " Cuidados: " + Plantas.get(i).getCuidados();
+            }
+        }
+        
+        return S;
+    }
+    
 }

@@ -1,22 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Model;
 
-/**
- *
- * @author 57301
- */
 public class Abono {
     //código, nombre, descripción, utilidad y precio.
     private int codigo;
     private String nombre;
     private String descripcion;
     private String utilidad;
-    private float precio;
+    private int precio;
 
-    public Abono(int codigo, String nombre, String descripcion, String utilidad, float precio) {
+    public Abono(int codigo, String nombre, String descripcion, String utilidad, int precio) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -64,15 +57,13 @@ public class Abono {
         this.utilidad = utilidad;
     }
 
-    public float getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
-    
-    
-    
+      
 }
 
