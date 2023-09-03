@@ -10,7 +10,7 @@ public class Planta {
     private String tolerancia;
     private int precio;
 
-    public Planta(byte codigo, String nombre, String cuidados, String tolerancia, int precio) {
+    public Planta(int codigo, String nombre, String cuidados, String tolerancia, int precio) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cuidados = cuidados;
@@ -30,7 +30,7 @@ public class Planta {
         return codigo;
     }
 
-    public void setCodigo(byte codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -65,10 +65,5 @@ public class Planta {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-    
-    
-    
-    
-    
-    
+       
 }
