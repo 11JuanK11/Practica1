@@ -52,7 +52,6 @@ public class Archivos_Abonos {
                 S += "Nombre: " + Abonos.get(i).getNombre() + " Utilidad: " + Abonos.get(i).getUtilidad();
             }
         }
-        
         return S;
     }
 }
