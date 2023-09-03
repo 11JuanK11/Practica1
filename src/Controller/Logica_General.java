@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class Logica_General {
     
-    Archivos_Plantas AP;
-    Archivos_Materas AM;
-    Archivos_Abonos AA;
+    Archivos_Plantas AP = new Archivos_Plantas();
+    Archivos_Materas AM = new Archivos_Materas();
+    Archivos_Abonos AA = new Archivos_Abonos();
     
     public ArrayList Ingresar( ArrayList general, ArrayList productos){
         general.add(productos);

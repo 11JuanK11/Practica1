@@ -33,6 +33,8 @@ public class Practica1 {
                             case 1:
                                 if (BP){
                                     ArrayList<Planta> P = new ArrayList<>();
+                                    General.setCont(General.getEspacio(),"P" );
+                                    General.setEspacio((byte)(General.getEspacio()+1));
                                     General.setArraygeneral(LG.Ingresar(General.getArraygeneral(), P));
                                     BP = false;
                                     JOptionPane.showMessageDialog(null, "El Array ha sido ingresado exitosamente.");
@@ -44,6 +46,8 @@ public class Practica1 {
                             case 2:
                                 if (BM){
                                     ArrayList<Matera> M = new ArrayList<>();
+                                    General.setCont(General.getEspacio(),"M" );
+                                    General.setEspacio((byte)(General.getEspacio()+1));
                                     General.setArraygeneral(LG.Ingresar(General.getArraygeneral(), M));
                                     BM = false;
                                     JOptionPane.showMessageDialog(null, "El Array ha sido ingresado exitosamente.");
@@ -55,6 +59,8 @@ public class Practica1 {
                             case 3: 
                                 if (BA){
                                     ArrayList<Abono> A = new ArrayList<>();
+                                    General.setCont(General.getEspacio(), "A");
+                                    General.setEspacio((byte)(General.getEspacio()+1));
                                     General.setArraygeneral(LG.Ingresar(General.getArraygeneral(), A));
                                     BA = false;
                                     JOptionPane.showMessageDialog(null, "El Array ha sido ingresado exitosamente.");

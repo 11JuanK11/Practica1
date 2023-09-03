@@ -11,7 +11,7 @@ import Model.*;
 import java.util.ArrayList;
 
 public class Archivos_Plantas {
-    private File F = new File("./Archivo/Informacion.txt");
+    private File F = new File("Informacion.txt");
     
     public ArrayList Ingresar( ArrayList Plantas, Planta planta){
         ArrayList<Planta> P = Plantas;
@@ -71,7 +71,7 @@ public class Archivos_Plantas {
         
         for (int i = 0; i < Plantas.size(); i++) {
             if(Plantas.get(i).getTolerancia().equalsIgnoreCase("Solar")){
-                S += "Nombre: " + Plantas.get(i).getTolerancia() + " Cuidados: " + Plantas.get(i).getCuidados() + "\n";
+                S += "Nombre: " + Plantas.get(i).getNombre()+ " Cuidados: " + Plantas.get(i).getCuidados() + "\n";
             }
         }
         
@@ -95,15 +95,13 @@ public class Archivos_Plantas {
     }
     
     public int BuscarPos(Vivero General){
-        int Pos = -1;
-        Planta P = new Planta();
-        
-        for (int i = 0; i < General.getArraygeneral().size(); i++) {
-            if (General.getArraygeneral().get(i).get(0).getClass().equals(P.getClass())){
+        int Pos = -1, i = 0;
+        while(i < General.getPos().length){
+            if (General.getCont(i).equals("P")){
                 Pos = i;
             }
+            i++;
         }
-        
         return Pos;
     }
     

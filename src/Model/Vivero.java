@@ -7,17 +7,27 @@ public class Vivero {
     
     //Atributos
     private ArrayList<ArrayList<?>> arraygeneral; 
-    private String nombre;
+    private String[] Pos;
+    private byte espacio;    
+
+    public byte getEspacio() {
+        return espacio;
+    }
+
+    public void setEspacio(byte espacio) {
+        this.espacio = espacio;
+    }
     
-    
-    public Vivero(ArrayList<ArrayList<?>> arraygeneral, String nombre) {
+    public Vivero(ArrayList<ArrayList<?>> arraygeneral, String[] pos, byte espacio) {
         this.arraygeneral = arraygeneral;
-        this.nombre = nombre;
+        this.Pos = pos;
+        this.espacio = espacio;
     }
     
     public Vivero() {
         this.arraygeneral = new ArrayList<ArrayList<?>>();
-        this.nombre = "";
+        this.Pos = new String[3];
+        this.espacio = 0;
     }
     
     public ArrayList<ArrayList<?>> getArraygeneral() {
@@ -28,12 +38,20 @@ public class Vivero {
         this.arraygeneral = arraygeneral;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String[] getPos() {
+        return Pos;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPos(String[] Pos) {
+        this.Pos = Pos;
+    }
+    
+    public String getCont(int i) {
+        return Pos[i];
+    }
+
+    public void setCont(int i, String S) {
+        Pos[i] = S ;
     }
 
     

@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Archivos_Materas {
-    private File F = new File("./Archivo/Informacion.txt");
+    private File F = new File("Informacion.txt");
     
     public ArrayList Ingresar( ArrayList Materas, Matera matera){
             Materas.add(matera);
@@ -18,7 +18,7 @@ public class Archivos_Materas {
     public ArrayList<Matera> Recuperar_Info(ArrayList<Matera> Materas) {
         byte i = 0;
         String S="";
-        ArrayList<Matera> arrayMatera = null;
+        ArrayList<Matera> arrayMatera = new ArrayList<>();
         try {
             FileReader B = new FileReader(F);
             BufferedReader leer = new BufferedReader(B);
@@ -77,15 +77,13 @@ public class Archivos_Materas {
     }
     
     public int BuscarPos(Vivero General){
-        int Pos = -1;
-        Matera M = new Matera();
-        
-        for (int i = 0; i < General.getArraygeneral().size(); i++) {
-            if (General.getArraygeneral().get(i).get(0).getClass().equals(M.getClass())){
+        int Pos = -1, i = 0;
+        while(i < General.getPos().length){
+            if (General.getCont(i).equals("M")){
                 Pos = i;
             }
+            i++;
         }
-        
         return Pos;
     }
 }

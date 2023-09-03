@@ -1,0 +1,3 @@
+1022;planta1;cuidado1;solar;50000
+1022;matera1;yeso;10.5;50000
+1022;abono1;descripcion1;utilidad1;50000

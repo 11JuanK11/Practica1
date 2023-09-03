@@ -11,7 +11,7 @@ import Model.*;
 import java.util.ArrayList;
 
 public class Archivos_Abonos {
-    private File F = new File("./Archivo/Informacion.txt");
+    private File F = new File("Informacion.txt");
         
         public ArrayList Ingresar( ArrayList Abonos, Abono abono){
             Abonos.add(abono);
@@ -81,15 +81,13 @@ public class Archivos_Abonos {
     }
     
     public int BuscarPos(Vivero General){
-        int Pos = -1;
-        Abono A = new Abono();
-        
-        for (int i = 0; i < General.getArraygeneral().size(); i++) {
-            if (General.getArraygeneral().get(i).get(0).getClass().equals(A.getClass())){
+        int Pos = -1, i = 0;
+        while(i < General.getPos().length){
+            if (General.getCont(i).equals("A")){
                 Pos = i;
             }
+            i++;
         }
-        
         return Pos;
     }
 }
