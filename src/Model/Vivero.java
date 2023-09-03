@@ -16,7 +16,7 @@ public class Vivero {
     }
     
     public Vivero() {
-        this.arraygeneral = null;
+        this.arraygeneral = new ArrayList<ArrayList<?>>();
         this.nombre = "";
     }
     

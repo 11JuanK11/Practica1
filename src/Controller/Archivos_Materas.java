@@ -72,4 +72,16 @@ public class Archivos_Materas {
         return S;
     }
     
+    public int BuscarPos(Vivero General){
+        int Pos = -1;
+        Matera M = new Matera();
+        
+        for (int i = 0; i < General.getArraygeneral().size(); i++) {
+            if (General.getArraygeneral().get(i).get(0).getClass().equals(M.getClass())){
+                Pos = i;
+            }
+        }
+        
+        return Pos;
+    }
 }

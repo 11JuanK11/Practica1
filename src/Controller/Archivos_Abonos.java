@@ -75,4 +75,17 @@ public class Archivos_Abonos {
         
         return S;
     }
+    
+    public int BuscarPos(Vivero General){
+        int Pos = -1;
+        Abono A = new Abono();
+        
+        for (int i = 0; i < General.getArraygeneral().size(); i++) {
+            if (General.getArraygeneral().get(i).get(0).getClass().equals(A.getClass())){
+                Pos = i;
+            }
+        }
+        
+        return Pos;
+    }
 }

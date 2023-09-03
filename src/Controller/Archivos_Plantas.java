@@ -14,8 +14,9 @@ public class Archivos_Plantas {
     private File F = new File("./Archivo/Informacion.txt");
     
     public ArrayList Ingresar( ArrayList Plantas, Planta planta){
-        Plantas.add(planta);
-        return Plantas;
+        ArrayList<Planta> P = Plantas;
+        P.add(planta);
+        return P;
     } 
     
     public ArrayList<Planta> Recuperar_Info() {
@@ -88,6 +89,19 @@ public class Archivos_Plantas {
         S = "Planta: " + P.get(Pos).getNombre() + "\n";
         
         return S;
+    }
+    
+    public int BuscarPos(Vivero General){
+        int Pos = -1;
+        Planta P = new Planta();
+        
+        for (int i = 0; i < General.getArraygeneral().size(); i++) {
+            if (General.getArraygeneral().get(i).get(0).getClass().equals(P.getClass())){
+                Pos = i;
+            }
+        }
+        
+        return Pos;
     }
     
 }
