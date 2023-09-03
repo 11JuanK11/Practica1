@@ -17,21 +17,18 @@ public class Archivos_Abonos {
             Abonos.add(abono);
             return Abonos;
         } 
-	public ArrayList<Abono> Recuperar_Info(ArrayList<Abono> Abonos) {
+	public ArrayList<Abono> Recuperar_Info() {
             byte i = 0;
             String S="";
-            ArrayList<Abono> arrayAbono = new ArrayList<>();
+            ArrayList<Abono> arrayAbono = null;
             try {
                 FileReader B = new FileReader(F);
                 BufferedReader leer = new BufferedReader(B);
-                if(!Abonos.isEmpty()){
-                    for (Abono Abono1 : Abonos) {
-                        arrayAbono.add(Abono1);
-                    }
-                }
+
                 while (S != null) {
                     S = leer.readLine();
                     if(S != null && i == 2) {    
+                        arrayAbono = new ArrayList<>();
                         String[] cadena = S.split(",");
                         for (int j = 0; j < cadena.length ; j++) {
                             String[] atributos = cadena[j].split(";");
@@ -78,6 +75,4 @@ public class Archivos_Abonos {
         
         return S;
     }
-    
-   
 }
