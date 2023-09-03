@@ -173,9 +173,25 @@ public class Archivos_Plantas {
         
         for (int i = 0; i < Plantas.size(); i++) {
             if(Plantas.get(i).getTolerancia().equalsIgnoreCase("Solar")){
-                S += "Nombre: " + Plantas.get(i).getTolerancia() + " Cuidados: " + Plantas.get(i).getCuidados();
+                S += "Nombre: " + Plantas.get(i).getTolerancia() + " Cuidados: " + Plantas.get(i).getCuidados() + "\n";
             }
         }
+        
+        return S;
+    }
+    
+    public String ValorMenor(ArrayList Plantas){
+        String S = "";
+        ArrayList<Planta> P = Plantas;
+        int Menor = 100000, Pos = 0;
+      
+        for (int i = 0; i < P.size(); i++) {
+            if (P.get(i).getPrecio() < Menor){
+                Menor = P.get(i).getPrecio();
+                Pos = i;
+            }
+        }
+        S = "Planta: " + P.get(Pos).getNombre() + "\n";
         
         return S;
     }

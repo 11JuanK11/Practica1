@@ -49,9 +49,25 @@ public class Archivos_Abonos {
         
         for (int i = 0; i < Abonos.size(); i++) {
             if (Abonos.get(i).getPrecio() > 6500){
-                S += "Nombre: " + Abonos.get(i).getNombre() + " Utilidad: " + Abonos.get(i).getUtilidad();
+                S += "Nombre: " + Abonos.get(i).getNombre() + " Utilidad: " + Abonos.get(i).getUtilidad() + "\n";
             }
         }
+        
+        return S;
+    }
+    
+    public String ValorMenor(ArrayList Abonos){
+        String S = "";
+        ArrayList<Abono> A = Abonos;
+        int Menor = 100000, Pos = 0;
+      
+        for (int i = 0; i < A.size(); i++) {
+            if (A.get(i).getPrecio() < Menor){
+                Menor = A.get(i).getPrecio();
+                Pos = i;
+            }
+        }
+        S = "Abono: " + A.get(Pos).getNombre() + "\n";
         
         return S;
     }

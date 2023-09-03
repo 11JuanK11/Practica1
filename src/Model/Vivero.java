@@ -6,11 +6,11 @@ import java.util.ArrayList;
 public class Vivero {
     
     //Atributos
-    private ArrayList<ArrayList<Object>> arraygeneral; 
+    private ArrayList<ArrayList<?>> arraygeneral; 
     private String nombre;
     
     
-    public Vivero(ArrayList<ArrayList<Object>> arraygeneral, String nombre) {
+    public Vivero(ArrayList<ArrayList<?>> arraygeneral, String nombre) {
         this.arraygeneral = arraygeneral;
         this.nombre = nombre;
     }
@@ -20,11 +20,11 @@ public class Vivero {
         this.nombre = "";
     }
     
-    public ArrayList<ArrayList<Object>> getArraygeneral() {
+    public ArrayList<ArrayList<?>> getArraygeneral() {
         return arraygeneral;
     }
 
-    public void setArraygeneral(ArrayList<ArrayList<Object>> arraygeneral) {
+    public void setArraygeneral(ArrayList<ArrayList<?>> arraygeneral) {
         this.arraygeneral = arraygeneral;
     }
 

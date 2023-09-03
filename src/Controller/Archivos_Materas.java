@@ -16,4 +16,20 @@ public class Archivos_Materas {
         return Total;
     }
     
+    public String ValorMenor(ArrayList Materas){
+        String S = "";
+        ArrayList<Matera> M = Materas;
+        int Menor = 100000, Pos = 0;
+        
+        for (int i = 0; i < M.size(); i++) {
+            if (M.get(i).getPrecio() < Menor){
+                Menor = M.get(i).getPrecio();
+                Pos = i;
+            }
+        }
+        S = "Matera: " + M.get(Pos).getNombre() + "\n";
+        
+        return S;
+    }
+    
 }
