@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 public class Archivos_Materas {
     private File F = new File("./Archivo/Informacion.txt");
+    
+    public ArrayList Ingresar( ArrayList Materas, Matera matera){
+            Materas.add(matera);
+            return Materas;
+    } 
 
     public ArrayList<Matera> Recuperar_Info() {
         byte i = 0;

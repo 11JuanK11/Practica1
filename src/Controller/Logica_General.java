@@ -10,6 +10,11 @@ public class Logica_General {
     Archivos_Materas AM;
     Archivos_Abonos AA;
     
+    public ArrayList Ingresar( ArrayList general, ArrayList productos){
+        general.add(productos);
+        return general;
+    } 
+    
     public String PreciosBajos(Vivero General){
         String S = "";
         Planta P = new Planta();

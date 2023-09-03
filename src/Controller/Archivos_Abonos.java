@@ -12,7 +12,11 @@ import java.util.ArrayList;
 
 public class Archivos_Abonos {
     private File F = new File("./Archivo/Informacion.txt");
-         
+        
+        public ArrayList Ingresar( ArrayList Abonos, Abono abono){
+            Abonos.add(abono);
+            return Abonos;
+        } 
 	public ArrayList<Abono> Recuperar_Info() {
             byte i = 0;
             String S="";
