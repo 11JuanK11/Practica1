@@ -44,8 +44,9 @@ public class Archivos_Abonos {
             return arrayAbono;
 	}
         
-    public String AbonosMayorPrecio(ArrayList<Abono> Abonos){
+    public String AbonosMayorPrecio(ArrayList A){
         String S = "";
+        ArrayList<Abono> Abonos = A;
         
         for (int i = 0; i < Abonos.size(); i++) {
             if (Abonos.get(i).getPrecio() > 6500){

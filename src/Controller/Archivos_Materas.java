@@ -41,8 +41,9 @@ public class Archivos_Materas {
         return arrayMatera;
     }
     
-    public int TotalPesos(ArrayList<Matera> Materas){
+    public int TotalPesos(ArrayList M){
         int Total = 0;
+        ArrayList<Matera> Materas = M;
         
         for (int i = 0; i < Materas.size(); i++) {
             Total += Materas.get(i).getPrecio();       

@@ -44,8 +44,9 @@ public class Archivos_Plantas {
         return arrayPlanta;
     }   
             
-    public int CantidadSombras (ArrayList<Planta> Plantas){
+    public int CantidadSombras (ArrayList P){
         int CantSom = 0;
+        ArrayList<Planta> Plantas = P;
         
         for (int i = 0; i < Plantas.size(); i++) {
             if(Plantas.get(i).getTolerancia().equalsIgnoreCase("Sombra")){
@@ -55,8 +56,9 @@ public class Archivos_Plantas {
         return CantSom;
     }
     
-    public String PlantasSolares(ArrayList<Planta> Plantas){
+    public String PlantasSolares(ArrayList P){
         String S = "";
+        ArrayList<Planta> Plantas = P;
         
         for (int i = 0; i < Plantas.size(); i++) {
             if(Plantas.get(i).getTolerancia().equalsIgnoreCase("Solar")){
