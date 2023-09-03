@@ -78,7 +78,7 @@ public class Practica1 {
                     ArrayList ArrayR = General.getArraygeneral();
 
                     int PosPB = RAP.BuscarPos(General);
-                    ArrayR.set(PosPB, RAP.Recuperar_Info());
+                    ArrayR.set(PosPB, RAP.Recuperar_Info((ArrayList<Planta>) ArrayR.get(PosPB)));
                     General.setArraygeneral(ArrayR);
                     JOptionPane.showInternalMessageDialog(null, "Información Guardada.");
 
@@ -87,7 +87,7 @@ public class Practica1 {
                     ArrayList Array1R = General.getArraygeneral();
 
                     int PosMB = RAM.BuscarPos(General);
-                    Array1R.set(PosMB, RAM.Recuperar_Info());
+                    Array1R.set(PosMB, RAM.Recuperar_Info((ArrayList<Matera>) ArrayR.get(PosMB)));
                     General.setArraygeneral(Array1R);
                     JOptionPane.showInternalMessageDialog(null, "Información Guardada.");
 
@@ -96,7 +96,7 @@ public class Practica1 {
                     ArrayList Array2R = General.getArraygeneral();
 
                     int PosAB = RAA.BuscarPos(General);
-                    Array2R.set(PosAB, RAA.Recuperar_Info());
+                    Array2R.set(PosAB, RAA.Recuperar_Info((ArrayList<Abono>) ArrayR.get(PosAB)));
                     General.setArraygeneral(Array2R);
                     JOptionPane.showInternalMessageDialog(null, "Información Guardada.");
 

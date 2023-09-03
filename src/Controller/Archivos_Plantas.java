@@ -19,18 +19,21 @@ public class Archivos_Plantas {
         return P;
     } 
     
-    public ArrayList<Planta> Recuperar_Info() {
+    public ArrayList<Planta> Recuperar_Info(ArrayList<Planta> Plantas) {
         byte i = 0;
         String S="";
-        ArrayList<Planta> arrayPlanta = null;
+        ArrayList<Planta> arrayPlanta = new ArrayList<>();
         try {
             FileReader B = new FileReader(F);
             BufferedReader leer = new BufferedReader(B);
-
+            if(!Plantas.isEmpty()){
+                for (Planta Planta1 : Plantas) {
+                    arrayPlanta.add(Planta1);
+                }
+            }
             while (S != null) {
                 S = leer.readLine();
                 if(S != null && i == 0) {    
-                    arrayPlanta = new ArrayList<>();
                     String[] cadena = S.split(",");
                     for (int j = 0; j < cadena.length ; j++) {
                         String[] atributos = cadena[j].split(";");
