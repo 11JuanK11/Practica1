@@ -15,18 +15,21 @@ public class Archivos_Materas {
             return Materas;
     } 
 
-    public ArrayList<Matera> Recuperar_Info() {
+    public ArrayList<Matera> Recuperar_Info( ArrayList<Matera> Materas) {
         byte i = 0;
         String S="";
-        ArrayList<Matera> arrayMatera = null;
+        ArrayList<Matera> arrayMatera = new ArrayList<>();
         try {
             FileReader B = new FileReader(F);
             BufferedReader leer = new BufferedReader(B);
-
+            if(!Materas.isEmpty()){
+                for (Matera Matera1 : Materas) {
+                    arrayMatera.add(Matera1);
+                }
+            }
             while (S != null) {
                 S = leer.readLine();
                 if(S != null && i == 1) {    
-                    arrayMatera = new ArrayList<>();
                     String[] cadena = S.split(",");
                     for (int j = 0; j < cadena.length ; j++) {
                         String[] atributos = cadena[j].split(";");
