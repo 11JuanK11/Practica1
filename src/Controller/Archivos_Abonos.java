@@ -2,19 +2,18 @@
 package Controller;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.Scanner;
 import Model.*;
 import java.util.ArrayList;
 
 public class Archivos_Abonos {
-    private File F = new File("Informacion.txt");
+    private File F = new File("./src/Data/Informacion.txt");
         
         public ArrayList Ingresar( ArrayList Abonos, Abono abono){
-            Abonos.add(abono);
+            if (abono != null){
+                Abonos.add(abono);
+            }
             return Abonos;
         } 
 	public ArrayList<Abono> Recuperar_Info(ArrayList<Abono> Abonos) {
@@ -57,9 +56,14 @@ public class Archivos_Abonos {
         ArrayList<Abono> Abonos = A;
         
         for (int i = 0; i < Abonos.size(); i++) {
-            if (Abonos.get(i).getPrecio() > 6500){
-                S += "Nombre: " + Abonos.get(i).getNombre() + " Utilidad: " + Abonos.get(i).getUtilidad() + "\n";
-            }
+            try{
+                if (Abonos.get(i).getPrecio() > 6500){
+                    S += "Nombre: " + Abonos.get(i).getNombre() + " Utilidad: " + Abonos.get(i).getUtilidad() + "\n";
+                }
+            }catch (Exception e){}
+        }
+        if(S.equals("")){
+            S = "No se han encontrado Abonos.";
         }
         return S;
     }
@@ -75,19 +79,26 @@ public class Archivos_Abonos {
                 Pos = i;
             }
         }
-        S = "Abono: " + A.get(Pos).getNombre() + "\n";
+        if(Menor != 100000){
+            S = "Abono: " + A.get(Pos).getNombre() + "\n";
+        }else{
+            S = "No se han encontrado Abonos.";
+        }
         
         return S;
     }
     
     public int BuscarPos(Vivero General){
         int Pos = -1, i = 0;
-        while(i < General.getPos().length){
-            if (General.getCont(i).equals("A")){
-                Pos = i;
+        try {
+            while(i < General.getPos().length && Pos == -1){
+                if (General.getCont(i).equals("A") ){
+                    Pos = i;
+                }
+                i++;
             }
-            i++;
-        }
+        } catch (Exception e) {}
+        
         return Pos;
     }
 }

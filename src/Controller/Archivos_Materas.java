@@ -8,10 +8,12 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Archivos_Materas {
-    private File F = new File("Informacion.txt");
+    private File F = new File("./src/Data/Informacion.txt");
     
     public ArrayList Ingresar( ArrayList Materas, Matera matera){
-            Materas.add(matera);
+            if (matera != null){
+                Materas.add(matera);
+            }
             return Materas;
     } 
 
@@ -71,19 +73,25 @@ public class Archivos_Materas {
                 Pos = i;
             }
         }
-        S = "Matera: " + M.get(Pos).getNombre() + "\n";
-        
+        if(Menor != 100000){
+            S = "Matera: " + M.get(Pos).getNombre() + "\n";
+        }else{
+            S = "No se han encontrado Materas.";
+        }
         return S;
     }
     
     public int BuscarPos(Vivero General){
         int Pos = -1, i = 0;
-        while(i < General.getPos().length){
-            if (General.getCont(i).equals("M")){
-                Pos = i;
-            }
-            i++;
-        }
+        try {
+            while(i < General.getPos().length && Pos == -1){
+                if (General.getCont(i).equals("M")){
+                    Pos = i;
+                }
+                i++;
+            }   
+        } catch (Exception e) {}
+        
         return Pos;
     }
 }

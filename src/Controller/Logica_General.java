@@ -20,8 +20,8 @@ public class Logica_General {
         Planta P = new Planta();
         
         Matera M = new Matera();
-
-        for (int i = 0; i < General.getArraygeneral().size(); i++) {
+        try {
+            for (int i = 0; i < General.getArraygeneral().size(); i++) {
             //Compara la clase del arraylist en la posición i con el arraylist que se creo anterior.
             if (General.getArraygeneral().get(i).get(0).getClass().equals(P.getClass())){
                     S += AP.ValorMenor(General.getArraygeneral().get(i));
@@ -33,7 +33,8 @@ public class Logica_General {
                 }
             }
         }
-       
+        } catch (Exception e) {}
+
         return S;
     }
     
@@ -43,10 +44,16 @@ public class Logica_General {
         Planta P = new Planta();
         
         Matera M = new Matera();
-        
-        for (int i = 0; i < General.getArraygeneral().size(); i++) {
+        try {
+            for (int i = 0; i < General.getArraygeneral().size(); i++) {
             if (General.getArraygeneral().get(i).get(0).getClass().equals(P.getClass())){
-                        S += "Cantidad de Plantas de Sombra: " + AP.CantidadSombras(General.getArraygeneral().get(i)) + "\n";
+                        int T = AP.CantidadSombras(General.getArraygeneral().get(i));
+                        //S += "Cantidad de Plantas de Sombra: " + AP.CantidadSombras(General.getArraygeneral().get(i)) + "\n";
+                        if (T != 0 ){
+                            S += "Cantidad de Plantas de Sombra: " + T + "\n";
+                        }else{
+                            S += "Cantidad de Plantas de Sombra: No se encontró plantas de sombra.";
+                        }
                         S += "Plantas Solares y sus Cuidados: \n" + AP.PlantasSolares(General.getArraygeneral().get(i)) + "\n";
             }else{
                 if (General.getArraygeneral().get(i).get(0).getClass().equals(M.getClass())){
@@ -56,9 +63,14 @@ public class Logica_General {
                 }
             }
         }
+        } catch (Exception e) {}
         S += PreciosBajos(General);
+        if(!"".equals(S)){
+            return S;
+        }else{
+            return "No ingresaste toda la informacion";
+        }
         
-        return S;
     }
        
 }

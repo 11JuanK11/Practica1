@@ -11,12 +11,13 @@ import Model.*;
 import java.util.ArrayList;
 
 public class Archivos_Plantas {
-    private File F = new File("Informacion.txt");
+    private File F = new File("./src/Data/Informacion.txt");
     
     public ArrayList Ingresar( ArrayList Plantas, Planta planta){
-        ArrayList<Planta> P = Plantas;
-        P.add(planta);
-        return P;
+        if (planta != null){
+            Plantas.add(planta);
+        }
+        return Plantas;
     } 
     
     public ArrayList<Planta> Recuperar_Info(ArrayList<Planta> Plantas) {
@@ -74,7 +75,9 @@ public class Archivos_Plantas {
                 S += "Nombre: " + Plantas.get(i).getNombre()+ " Cuidados: " + Plantas.get(i).getCuidados() + "\n";
             }
         }
-        
+        if(S.equals("")){
+            S = "No se han encontrado plantas solares.";
+        }
         return S;
     }
     
@@ -89,19 +92,25 @@ public class Archivos_Plantas {
                 Pos = i;
             }
         }
-        S = "Planta: " + P.get(Pos).getNombre() + "\n";
-        
+        if(Menor != 100000){
+            S = "Planta: " + P.get(Pos).getNombre() + "\n";
+        }else{
+            S = "No se han encontrado Plantas. \n";
+        }
         return S;
     }
     
     public int BuscarPos(Vivero General){
         int Pos = -1, i = 0;
-        while(i < General.getPos().length){
-            if (General.getCont(i).equals("P")){
-                Pos = i;
-            }
-            i++;
-        }
+        try {
+            while(i < General.getPos().length && Pos == -1){
+                if (General.getCont(i).equals("P") ){
+                    Pos = i;
+                }
+                i++;
+            }    
+        } catch (Exception e) {}
+        
         return Pos;
     }
     
