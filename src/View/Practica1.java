@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class Practica1 {
 
     public static void main(String[] args) {
-        int Opc = 0;
+        int Opc = 0, Opc2;
         boolean BP = true , BM = true, BA = true;
         Vivero General = new Vivero();
         
@@ -27,17 +27,17 @@ public class Practica1 {
                 case 1:
                     do{
                         try {
-                            Opc = Integer.parseInt(JOptionPane.showInputDialog(null, "1. Ingresar ArrayPlantas. \n"
+                            Opc2 = Integer.parseInt(JOptionPane.showInputDialog(null, "1. Ingresar ArrayPlantas. \n"
                             + "2. Ingresar ArrayMateras.\n"
                             + "3. Ingresar ArrayAbonos.\n"
                             + "4. Salir", "MENÚ ARRAYS", 3));
                         } catch (Exception e) {
-                            Opc = 0;
+                            Opc2 = 0;
                         }
                         
                         
                         Logica_General LG = new Logica_General();
-                        switch (Opc){
+                        switch (Opc2){
                             case 1:
                                 if (BP){
                                     ArrayList<Planta> P = new ArrayList<>();
@@ -83,7 +83,7 @@ public class Practica1 {
                             default:
                                 JOptionPane.showInternalMessageDialog(null, "Opción incorrecta.");
                         }
-                    }while (Opc != 4);
+                    }while (Opc2 != 4);
                     break;
 
                 case 2:
@@ -121,17 +121,17 @@ public class Practica1 {
                     if (General.getEspacio() > 0){
                         do{
                             try {
-                                Opc = Integer.parseInt(JOptionPane.showInputDialog(null, "1. Ingresar Plantas. \n"
+                                Opc2 = Integer.parseInt(JOptionPane.showInputDialog(null, "1. Ingresar Plantas. \n"
                                 + "2. Ingresar Materas.\n"
                                 + "3. Ingresar Abonos.\n"
                                 + "4. Salir", "MENÚ INGRESAR", 3));
                             } catch (Exception e) {
-                                Opc = 0;
+                                Opc2 = 0;
                             }
                         
                         
-                         Procesos Pro = new Procesos();
-                        switch (Opc){
+                        Procesos Pro = new Procesos();
+                        switch (Opc2){
                             case 1:
                                 Archivos_Plantas AP = new Archivos_Plantas();
                                 ArrayList Array = General.getArraygeneral();
@@ -181,7 +181,7 @@ public class Practica1 {
                             default:
                                 JOptionPane.showInternalMessageDialog(null, "Opción incorrecta.");
                         }
-                        }while (Opc != 4);
+                        }while (Opc2 != 4);
                     }else{
                         JOptionPane.showInternalMessageDialog(null, "No se ha ingresado Arrays.");
                     }

@@ -17,7 +17,7 @@ public class Procesos {
             P.setCodigo(Integer.parseInt(JOptionPane.showInputDialog("Ingresa el codigo de la Planta.")));
             P.setNombre(JOptionPane.showInputDialog("Ingresa el nombre de la Planta."));
             P.setCuidados(JOptionPane.showInputDialog("Ingresa los cuidados de la Planta."));
-            P.setTolerancia(JOptionPane.showInputDialog("¿La Planta tolera el sol o la sombra?."));
+            P.setTolerancia(JOptionPane.showInputDialog("¿La Planta es Solar o de Sombra?."));
             P.setPrecio(Integer.parseInt(JOptionPane.showInputDialog("Ingresa el precio de la Planta.")));
             return P;
         } catch (Exception e) {
